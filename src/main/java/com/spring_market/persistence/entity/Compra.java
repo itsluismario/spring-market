@@ -28,7 +28,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "compra")
     private List<ComprasProducto> productos;
 
     public int getIdCompra() {
