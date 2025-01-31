@@ -1,21 +1,21 @@
 package com.spring_market.domain;
 
+
 public class Product {
-    private int productoId;
+    private int productId;
     private String name;
     private int categoryId;
     private double price;
     private int stock;
     private boolean active;
-
     private Category category;
 
-    public int getProductoId() {
-        return productoId;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProductoId(int productoId) {
-        this.productoId = productoId;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -66,4 +66,3 @@ public class Product {
         this.category = category;
     }
 }
-
