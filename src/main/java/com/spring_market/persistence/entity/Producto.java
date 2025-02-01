@@ -2,7 +2,6 @@ package com.spring_market.persistence.entity;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "productos")
 public class Producto {

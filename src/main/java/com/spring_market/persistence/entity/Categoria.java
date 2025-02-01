@@ -2,7 +2,6 @@ package com.spring_market.persistence.entity;
 import jakarta.persistence.*;
 import java.util.List;
 
-
 @Entity
 @Table(name = "categorias")
 public class Categoria {
