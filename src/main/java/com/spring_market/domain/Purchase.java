@@ -6,10 +6,12 @@ import java.util.List;
 public class Purchase {
     private int purchaseId;
     private String clientId;
-    private LocalDateTime data;
-    private String commnet;
+    private LocalDateTime date;
+    private String paymentMethod;
+    private String comment;
+
     private String state;
-    private List<PurchaseItem> item;
+    private List<PurchaseItem> items;
 
     public int getPurchaseId() {
         return purchaseId;
@@ -28,19 +30,27 @@ public class Purchase {
     }
 
     public LocalDateTime getData() {
-        return data;
+        return date;
     }
 
     public void setData(LocalDateTime data) {
-        this.data = data;
+        this.date = data;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public String getCommnet() {
-        return commnet;
+        return comment;
     }
 
     public void setCommnet(String commnet) {
-        this.commnet = commnet;
+        this.comment = commnet;
     }
 
     public String getState() {
@@ -52,10 +62,10 @@ public class Purchase {
     }
 
     public List<PurchaseItem> getItem() {
-        return item;
+        return items;
     }
 
     public void setItem(List<PurchaseItem> item) {
-        this.item = item;
+        this.items = item;
     }
 }
