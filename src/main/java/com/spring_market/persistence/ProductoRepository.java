@@ -2,6 +2,7 @@ package com.spring_market.persistence;
 
 import com.spring_market.domain.Product;
 import com.spring_market.domain.repository.ProductRepository;
+import com.spring_market.persistence.crud.CompraCrudRepository;
 import com.spring_market.persistence.crud.ProductoCrudRepository;
 import com.spring_market.persistence.entity.Producto;
 import com.spring_market.persistence.mapper.ProductMapper;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @Repository
 public class ProductoRepository implements ProductRepository {
+
     @Autowired
     private ProductoCrudRepository productoCrudRepository;
 
