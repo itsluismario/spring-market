@@ -1,18 +1,17 @@
 package com.spring_market.domain;
 
-import java.time.LocalDateTime;
-
 public class PurchaseItem {
-    private int porductId;
+    private int productId;
     private int quantity;
     private double total;
     private boolean active;
-    public int getPorductId() {
-        return porductId;
+
+    public int getProductId() {
+        return productId;
     }
 
-    public void setPorductId(int porductId) {
-        this.porductId = porductId;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public int getQuantity() {

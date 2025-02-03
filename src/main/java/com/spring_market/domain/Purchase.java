@@ -3,13 +3,13 @@ package com.spring_market.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 public class Purchase {
     private int purchaseId;
     private String clientId;
     private LocalDateTime date;
     private String paymentMethod;
     private String comment;
-
     private String state;
     private List<PurchaseItem> items;
 
@@ -29,12 +29,12 @@ public class Purchase {
         this.clientId = clientId;
     }
 
-    public LocalDateTime getData() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setData(LocalDateTime data) {
-        this.date = data;
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
     public String getPaymentMethod() {
@@ -45,12 +45,12 @@ public class Purchase {
         this.paymentMethod = paymentMethod;
     }
 
-    public String getCommnet() {
+    public String getComment() {
         return comment;
     }
 
-    public void setCommnet(String commnet) {
-        this.comment = commnet;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getState() {
@@ -61,11 +61,11 @@ public class Purchase {
         this.state = state;
     }
 
-    public List<PurchaseItem> getItem() {
+    public List<PurchaseItem> getItems() {
         return items;
     }
 
-    public void setItem(List<PurchaseItem> item) {
-        this.items = item;
+    public void setItems(List<PurchaseItem> items) {
+        this.items = items;
     }
 }

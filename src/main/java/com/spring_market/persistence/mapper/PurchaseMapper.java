@@ -6,6 +6,9 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import com.spring_market.persistence.entity.ComprasProducto;
+import com.spring_market.persistence.entity.ComprasProductoPK;
+import java.util.stream.Collectors;
 
 import java.util.List;
 
@@ -25,5 +28,30 @@ public interface PurchaseMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "cliente", ignore = true)
-    Compra toCompra(Purchase purchase);
+    default Compra toCompra(Purchase purchase) {
+        Compra compra = new Compra();
+        compra.setIdCliente(purchase.getClientId());
+        compra.setFecha(purchase.getDate());
+        compra.setMedioPago(purchase.getPaymentMethod());
+        compra.setComentario(purchase.getComment());
+        compra.setEstado(purchase.getState());
+
+        if (purchase.getItems() != null) {
+            compra.setProductos(purchase.getItems().stream()
+                    .map(item -> {
+                        ComprasProducto producto = new ComprasProducto();
+                        ComprasProductoPK pk = new ComprasProductoPK();
+                        pk.setIdProducto(item.getProductId());
+                        producto.setId(pk);
+                        producto.setCantidad(item.getQuantity());
+                        producto.setTotal(item.getTotal());
+                        producto.setEstado(item.isActive());
+                        producto.setCompra(compra);
+                        return producto;
+                    })
+                    .collect(Collectors.toList()));
+        }
+
+        return compra;
+    }
 }
